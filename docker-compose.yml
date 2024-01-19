@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+    bot:
+        image: the-crossiant
+        environment:
+            - DISCORD_TOKEN=${DISCORD_TOKEN}
+            - DATABASE_URL=postgresql://prisma:prisma@db:5432/prisma
+        depends_on:
+            - db
+
+    db:
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=prisma
+            - POSTGRES_PASSWORD=prisma
+            - POSTGRES_DB=prisma
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+
+volumes:
+    postgres_data:
