@@ -1,3 +1,5 @@
+# This is alright now
+
 FROM node:20
 
 WORKDIR /usr/src/root
