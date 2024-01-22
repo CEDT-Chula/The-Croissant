@@ -4,6 +4,9 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "strict": true,
-        "forceConsistentCasingInFileNames": true
-    }
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./dist"
+    },
+    "include": ["src/**/*", "script/deploy-commands.js"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
 }
